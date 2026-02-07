@@ -28,8 +28,17 @@ The Cartesian product of sets A and B is the set of all ordered pairs.
 Notation:
   A CROSS B = {(a, b) | a IN A AND b IN B}
 
-Example:
-  {1, 2} CROSS {x, y} = {(1,x), (1,y), (2,x), (2,y)}
+
+Algebraic Data Types: Products and Sums
+----------------------------------------
+
+Product type (A CROSS B):
+  Combines two types into ordered pairs.
+  Example: Natural number CROSS Boolean
+
+Sum type (A + B):
+  Disjoint union - element from A or B, tagged with origin.
+  Example: Integer + Boolean = elements from Integer or Boolean
 
 
 Relations
@@ -114,3 +123,16 @@ Properties:
 
 Composition:
   (g * f)(x) = g(f(x)) - apply f, then apply g
+
+
+Algebraic Data Types: Function Types
+-------------------------------------
+
+Function type (A -> B):
+  Type of functions mapping from A to B.
+  Example: Integer -> Boolean represents functions that take an integer
+  and return a boolean.
+
+Higher-order functions:
+  Functions that take functions as arguments or return functions.
+  Example: (A -> B) -> (B -> C) -> (A -> C) is function composition.
