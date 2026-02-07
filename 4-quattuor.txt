@@ -1,0 +1,109 @@
+=================================================
+Chapter 4: From Plurality to Continuity
+=================================================
+
+Construction of Number Systems
+-------------------------------
+
+Integers Z = {..., -2, -1, 0, 1, 2, ...}
+  Construction: equivalence classes on N CROSS N
+
+Rationals Q = {p/q | p, q in Z, q != 0}
+  Construction: equivalence classes on Z CROSS (Z - {0})
+
+Reals R (all points on the number line)
+  Construction: Dedekind cuts or Cauchy sequences of rationals
+
+These constructions show how complex number systems build from simpler ones
+through equivalence relations.
+
+
+Monoids
+-------
+
+A monoid is a set with an associative binary operation and an identity element.
+
+Definition:
+  (M, *, e) where:
+    * : M CROSS M -> M       (binary operation)
+    FOR ALL a, b, c IN M:
+      (a * b) * c = a * (b * c)     (associativity)
+      e * a = a * e = a             (identity)
+
+Monoids are a fundamental structure in abstract algebra, along with groups,
+rings, and fields.
+
+Examples:
+  (N, +, 0)     - natural numbers under addition
+  (N, *, 1)     - natural numbers under multiplication
+  (Z, +, 0)     - integers under addition
+  (Q, +, 0)     - rationals under addition
+  (Q - {0}, *, 1) - nonzero rationals under multiplication
+  (R, +, 0)     - reals under addition
+  (sequences over A, concatenation, empty sequence)
+  (lists over A, concatenation, empty list)
+
+
+Limits and Convergence
+----------------------
+
+Limit of a sequence:
+  A sequence (s_n) has limit L if:
+  FOR ALL epsilon > 0, EXISTS N, FOR ALL n >= N, dist(s_n, L) < epsilon
+  
+  where dist(a, b) is the distance between a and b.
+  
+  Notation: lim (n -> infinity) s_n = L
+  
+  The sequence gets arbitrarily close to L for sufficiently large n.
+
+Convergence:
+  A sequence converges if it has a finite limit.
+  A series SUM(a_n) converges if its partial sums converge.
+
+These concepts underlie probability theory and asymptotic analysis.
+
+
+Probability
+-----------
+
+Probability measures the likelihood of events.
+
+Sample space:
+  Set of all possible outcomes
+
+Event:
+  Subset of the sample space
+
+Probability function P:
+  P: Events -> [0, 1]
+  P(sample space) = 1
+  P(A UNION B) = P(A) + P(B) when A and B are disjoint
+
+Conditional probability:
+  P(A | B) = P(A AND B) / P(B)
+  Probability of A given B has occurred
+
+Independence:
+  Events A and B are independent if P(A AND B) = P(A) * P(B)
+
+Random variable:
+  A function X from the sample space to real numbers
+  Maps outcomes to numerical values
+
+
+Information Theory
+------------------
+
+Information theory quantifies information and uncertainty.
+
+Entropy:
+  For discrete random variable X with probabilities p_1, p_2, ..., p_n:
+  H(X) = - SUM(p_i * log_2(p_i))
+  
+  Measured in bits. Represents average uncertainty or information content.
+
+Properties:
+  Higher entropy means more uncertainty
+  Uniform distribution maximizes entropy
+  Entropy measures minimum average code length for encoding

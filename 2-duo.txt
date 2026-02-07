@@ -2,7 +2,7 @@
 Chapter 2: From Collection to Connection
 =================================================
 
-Elementary Set Theory
+Set 
 ---------------------
 
 A set is a collection of distinct objects.
@@ -34,11 +34,10 @@ Algebraic Data Types: Products and Sums
 
 Product type (A CROSS B):
   Combines two types into ordered pairs.
-  Example: Natural number CROSS Boolean
 
 Sum type (A + B):
+  ({left} CROSS A) UNION ({right} CROSS B)
   Disjoint union - element from A or B, tagged with origin.
-  Example: Integer + Boolean = elements from Integer or Boolean
 
 
 Relations
@@ -83,8 +82,13 @@ Equivalence Relations
 
 An equivalence relation is reflexive, symmetric, and transitive.
 
+Notation: 
+  a EQUALS b (a and b are equivalent)
+
+In programming, equality (=) is an equivalence relation.
+
 Equivalence class of x:
-  [x] = {y | x R y}
+  [x] = {y | x EQUALS y}
 
 Partition:
   An equivalence relation divides a set into disjoint equivalence classes.
@@ -96,13 +100,14 @@ Partial Orders
 A partial order is a relation that is reflexive, antisymmetric, and transitive.
 
 Notation:
-  (S, ≤) is a partially ordered set (poset)
+  a PRECEDES b (a precedes b in the order)
+  Or: (S, PRECEDES) is a partially ordered set (poset)
 
 Special elements:
-  Minimal:  no element is smaller
-  Maximal:  no element is larger
-  Least:    smaller than all elements
-  Greatest: larger than all elements
+  Minimal:  no element precedes it
+  Maximal:  it precedes no element
+  Least:    precedes all elements
+  Greatest: all elements precede it
 
 
 Functions
@@ -123,6 +128,16 @@ Properties:
 
 Composition:
   (g * f)(x) = g(f(x)) - apply f, then apply g
+
+
+Indexed Collections
+-------------------
+
+An indexed collection is a function from an index set to a set of values.
+
+Given index set I and set S:
+  f: I -> S
+  For each i IN I, f(i) is an element of S
 
 
 Algebraic Data Types: Function Types

@@ -1,0 +1,129 @@
+=================================================
+Chapter 3: From Enumeration to Generation
+=================================================
+
+Natural Numbers
+---------------
+
+The natural numbers N = {0, 1, 2, 3, ...} represent counting.
+
+Construction via Peano axioms (details omitted):
+  - Zero is a natural number
+  - Every natural number has a successor
+  - Zero is not the successor of any number
+  - Different numbers have different successors
+
+
+Sequences
+---------
+
+A sequence is an indexed collection using natural numbers as the index set.
+
+Notation:
+  s: N -> S
+  s(0), s(1), s(2), ... or s_0, s_1, s_2, ...
+
+Finite sequences:
+  Functions from {0, 1, ..., n-1} to S
+  Length n sequence
+
+
+Combinatorics
+-------------
+
+Permutations of k from n:
+  Recursive: P(n, k) = n * P(n-1, k-1)
+  Closed form: P(n, k) = n!/(n-k)!
+
+Permutations of n objects:
+  P(n) = n!
+
+Combinations:
+  Recursive: C(n, k) = C(n-1, k-1) + C(n-1, k)  (Pascal's triangle)
+  Closed form: C(n, k) = n!/(k! * (n-k)!)
+
+
+Mathematical Induction
+----------------------
+
+Principle of Mathematical Induction:
+
+To prove FOR ALL n IN N, P(n):
+  1. Base case: Prove P(0)
+  2. Inductive step: Prove FOR ALL k, P(k) IMPLIES P(k+1)
+
+Strong induction:
+  Inductive step uses P(0), P(1), ..., P(k) to prove P(k+1)
+
+
+Inductive Definitions
+---------------------
+
+Objects defined recursively using base cases and inductive rules.
+
+Example - Factorial:
+  0! = 1                    (base case)
+  n! = n * (n-1)!          (inductive case)
+
+Example - Sum:
+  sum(0) = 0               (base case)
+  sum(n) = n + sum(n-1)    (inductive case)
+
+
+Algebraic Data Types: Recursive Types
+--------------------------------------
+
+Recursive types are defined in terms of themselves.
+
+List type:
+  List(A) = Empty | Cons(A, List(A))
+  A list is either empty or an element paired with another list
+
+Example lists over N:
+  Empty
+  Cons(1, Empty)
+  Cons(2, Cons(1, Empty))
+
+Tree type:
+  Tree(A) = Leaf | Node(Tree(A), A, Tree(A))
+  A tree is either a leaf or a node with left subtree, value, right subtree
+
+
+Recursion
+---------
+
+A function is recursive if it calls itself.
+
+Structure:
+  - Base case: direct answer
+  - Recursive case: reduce to simpler problem
+
+Example - Fibonacci:
+  fib(0) = 0
+  fib(1) = 1
+  fib(n) = fib(n-1) + fib(n-2)
+
+Termination requires:
+  Each recursive call moves toward base case
+
+
+Lambda Calculus
+---------------
+
+Lambda calculus is a formal system for expressing computation via functions.
+
+Lambda terms:
+  x                 - variable
+  LAMBDA x. M       - abstraction (function with parameter x, body M)
+  M N               - application (apply function M to argument N)
+
+Beta-reduction:
+  (LAMBDA x. M) N  ==>  M[x := N]
+  (substitute N for x in M)
+
+Example:
+  (LAMBDA x. x + 1) 5  ==>  5 + 1  ==>  6
+
+Recursion in lambda calculus (details omitted):
+  Fixed-point combinators like the Y-combinator enable recursive
+  computation without named functions.
