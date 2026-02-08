@@ -1,4 +1,6 @@
-# ANIMA-MECHANISMI
+# ANIMA MECHANISMI
+*Soul of Mechanism*
+
 An Index of Computer Science for Practitioners
 
 ---
