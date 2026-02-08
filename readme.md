@@ -5,23 +5,27 @@ An Index of Computer Science for Practitioners
 
 ---
 
-> *Comets arrive, bright with borrowed fire,*  
-> *promising their blaze will stay.*  
-> *Morning steals them anyway.*
+> *Comets arrive, ablaze*  
+> *with borrowed fire,*  
+> *heralds of the everlasting.*  
+> *Morning brushes them away.*
 > 
-> *Beneath the trailing glow,*  
-> *all that may be and may never be gathers.*  
-> *A river bends unseen,*  
-> *tracing arcs like frozen light.*
+> *In bedrock's deep,*  
+> *a river flows unseen,*  
+> *wearing stone, where all that may*  
+> *and may not be whispers.*
 > 
-> *Pearls gleam in your hand,*  
-> *but seeds you let fall*  
-> *sprout into trees,*  
-> *and trees into forests.*
+> *Pearls wash ashore,*  
+> *gleaming in our palms,*  
+> *but seeds that slip and fall*  
+> *root into trees,*  
+> *trees into forests,*  
+> *and we become dust.*
 > 
-> *After glitter fades,*  
-> *a silent thunder*  
-> *echoes from the dawn of time.*
+> *After radiance fades,*  
+> *a distant silent thunder*  
+> *echoes*  
+> *from before the dawn of time.*
 
 ---
 
