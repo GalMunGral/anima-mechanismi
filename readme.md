@@ -1,7 +1,7 @@
 # ANIMA MECHANISMI
 *Soul of Mechanism*
 
-An Index of Computer Science for Practitioners
+An Index of Computer Science
 
 ---
 
@@ -22,7 +22,7 @@ An Index of Computer Science for Practitioners
 > *trees into forests,*  
 > *and we become dust.*
 > 
-> *After radiance fades,*  
+> *After brilliance fades,*  
 > *a distant silent thunder*  
 > *echoes*  
 > *from before the dawn of time.*
@@ -653,6 +653,70 @@ Lambda calculus is a formal system for expressing computation via functions.
 **Beta-reduction:**
 - `(LAMBDA x. M) N ==> M[x := N]`
   - where `M[x := N]` substitutes `N` for free occurrences of `x` in `M`.
+
+### Type Systems
+
+A type system assigns types to terms and enforces constraints on their use.
+
+**Type:**
+A type `T` classifies terms by their structure and behavior.
+
+**Typing context:**
+- `GAMMA: Var -> Type` (function mapping variables to types)
+
+**Type judgment:**
+- `GAMMA |- t : T`
+- "In context `GAMMA`, term `t` has type `T`"
+
+**Simple types:**
+- Base types: `Bool`, `Nat`, `Int`
+- Function type: `T1 -> T2`
+- Product type: `T1 * T2`
+- Sum type: `T1 + T2`
+
+**Type safety:**
+
+A type system is **sound** if well-typed programs don't get stuck:
+- Progress: well-typed terms either are values or can step
+- Preservation: if `|- t : T` and `t => t'`, then `|- t' : T`
+
+### Simply Typed Lambda Calculus
+
+Lambda calculus with type annotations and typing rules.
+
+**Syntax:**
+- `t ::= x | LAMBDA x : T. t | t1 t2`
+
+**Typing rules:**
+
+**Variable:**
+- `IF GAMMA(x) = T THEN GAMMA |- x : T`
+
+**Abstraction:**
+- `IF GAMMA[x := T1] |- t : T2 THEN GAMMA |- (LAMBDA x : T1. t) : T1 -> T2`
+
+**Application:**
+- `IF GAMMA |- t1 : T1 -> T2 AND GAMMA |- t2 : T1 THEN GAMMA |- (t1 t2) : T2`
+
+### Polymorphism
+
+Parametric polymorphism allows types with type variables.
+
+**Type scheme:**
+- `FOR ALL alpha. T`
+- where `alpha` is a type variable
+
+**Example:**
+- Identity function: `FOR ALL alpha. alpha -> alpha`
+- List type: `FOR ALL alpha. List(alpha)`
+
+### Curry-Howard Correspondence
+
+Types correspond to logical propositions, programs to proofs:
+- `T1 -> T2` corresponds to implication `T1 IMPLIES T2`
+- `T1 * T2` corresponds to conjunction `T1 AND T2`
+- `T1 + T2` corresponds to disjunction `T1 OR T2`
+- A term of type `T` is a proof of proposition `T`
 
 ### Operational Semantics: Small-Step
 
