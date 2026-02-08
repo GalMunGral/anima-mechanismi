@@ -23,18 +23,31 @@ An Index of Computer Science for Practitioners
 
 ---
 
-## Chapter 1: From Particularity to Universality
+## Table of Contents
+
+1. [Particularity and Universality](#chapter-1-particularity-and-universality)
+2. [Collection and Connection](#chapter-2-collection-and-connection)
+3. [Enumeration and Generation](#chapter-3-enumeration-and-generation)
+4. [Plurality and Uncertainty](#chapter-4-plurality-and-uncertainty)
+5. [Notation and Articulation](#chapter-5-notation-and-articulation)
+6. [Mutation and Verification](#chapter-6-mutation-and-verification)
+7. [Automation and Imitation](#chapter-7-automation-and-imitation)
+8. [Complexity and Impossibility](#chapter-8-complexity-and-impossibility)
+
+---
+
+## Chapter 1: Particularity and Universality
 
 ### Propositional Logic
 
 A proposition is a statement that is either true or false.
 
 **Connectives:**
-- `P AND Q` - both P and Q are true
-- `P OR Q` - at least one of P or Q is true
-- `NOT P` - P is false
-- `P IMPLIES Q` - if P is true, then Q is true
-- `P IFF Q` - P and Q have the same truth value
+- `P AND Q` - both `P` and `Q` are true
+- `P OR Q` - at least one of `P` or `Q` is true
+- `NOT P` - `P` is false
+- `P IMPLIES Q` - if `P` is true, then `Q` is true
+- `P IFF Q` - `P` and `Q` have the same truth value
 
 **De Morgan's Laws:**
 - `NOT (P AND Q) IFF (NOT P) OR (NOT Q)`
@@ -45,33 +58,33 @@ A proposition is a statement that is either true or false.
 Extends propositional logic with quantifiers over objects.
 
 **Quantifiers:**
-- `FOR ALL x, P(x)` - P holds for every x
-- `EXISTS x, P(x)` - P holds for some x
+- `FOR ALL x, P(x)` - `P` holds for every `x`
+- `EXISTS x, P(x)` - `P` holds for some `x`
 
 **Variables:**
-- Bound variable: quantified by FOR ALL or EXISTS
+- Bound variable: quantified by `FOR ALL` or `EXISTS`
 - Free variable: not quantified
 
 ### Proof Techniques
 
 **Direct proof:**
-- To prove P IMPLIES Q, assume P is true and derive Q.
+- To prove `P IMPLIES Q`, assume `P` is true and derive `Q`.
 
 **Proof by contradiction:**
-- To prove P, assume NOT P and derive a contradiction.
+- To prove `P`, assume `NOT P` and derive a contradiction.
 
 **Proof by contrapositive:**
-- To prove P IMPLIES Q, prove (NOT Q) IMPLIES (NOT P).
+- To prove `P IMPLIES Q`, prove `(NOT Q) IMPLIES (NOT P)`.
 
 **Proof by cases:**
-- To prove P, split into exhaustive cases and prove each.
+- To prove `P`, split into exhaustive cases and prove each.
 
 **Counterexample:**
 - To disprove `FOR ALL x, P(x)`, find one `x` where `P(x)` is false.
 
 ---
 
-## Chapter 2: From Collection to Connection
+## Chapter 2: Collection and Connection
 
 ### Set
 
@@ -91,7 +104,7 @@ A set is a collection of distinct objects.
 
 ### Cartesian Product
 
-The Cartesian product of sets A and B is the set of all ordered pairs.
+The Cartesian product of sets `A` and `B` is the set of all ordered pairs.
 
 **Notation:**
 - `A CROSS B = {(a, b) | a IN A AND b IN B}`
@@ -103,16 +116,16 @@ The Cartesian product of sets A and B is the set of all ordered pairs.
 
 **Sum type `(A + B)`:**
 - `({left} CROSS A) UNION ({right} CROSS B)`
-- Disjoint union - element from A or B, tagged with origin.
+- Disjoint union - element from `A` or `B`, tagged with origin.
 
 ### Relations
 
-A relation R from set A to set B is a subset of `A CROSS B`.
+A relation `R` from set `A` to set `B` is a subset of `A CROSS B`.
 
 **Notation:**
 - `(a, b) IN R`, or: `a R b`
 
-**Properties of a relation R on a set A:**
+**Properties of a relation `R` on a set `A`:**
 - Reflexive: `FOR ALL x, x R x`
 - Symmetric: `FOR ALL x, y, (x R y) IMPLIES (y R x)`
 - Transitive: `FOR ALL x, y, z, (x R y AND y R z) IMPLIES (x R z)`
@@ -120,7 +133,7 @@ A relation R from set A to set B is a subset of `A CROSS B`.
 
 ### Graphs
 
-Given a relation E on a set V, we can visualize it as a graph.
+Given a relation `E` on a set `V`, we can visualize it as a graph.
 
 A graph `G = (V, E)` consists of:
 - `V` - set of vertices
@@ -143,9 +156,9 @@ If `(u, v) IN E`, we say there is an edge from `u` to `v`.
 An equivalence relation is reflexive, symmetric, and transitive.
 
 **Notation:**
-- `a EQUALS b` (a and b are equivalent)
+- `a EQUALS b` (`a` and `b` are equivalent)
 
-**Equivalence class of x:**
+**Equivalence class of `x`:**
 - `[x] = {y | x EQUALS y}`
 
 **Partition:**
@@ -156,7 +169,7 @@ An equivalence relation is reflexive, symmetric, and transitive.
 A partial order is a relation that is reflexive, antisymmetric, and transitive.
 
 **Notation:**
-- `a PRECEDES b` (a precedes b in the order)
+- `a PRECEDES b` (`a` precedes `b` in the order)
 - Or: `(S, PRECEDES)` is a partially ordered set (poset)
 
 **Special elements:**
@@ -177,11 +190,11 @@ A function `f: A -> B` is a subset of `A CROSS B` where:
 
 **Properties:**
 - Injective (one-to-one): different inputs map to different outputs
-- Surjective (onto): every element of B is mapped to
+- Surjective (onto): every element of `B` is mapped to
 - Bijective: both injective and surjective
 
 **Composition:**
-- `(g * f)(x) = g(f(x))` - apply f, then apply g
+- `(g * f)(x) = g(f(x))` - apply `f`, then apply `g`
 
 ### Indexed Collections
 
@@ -194,7 +207,7 @@ Given index set `I` and set `S`:
 ### Algebraic Data Types: Function Types
 
 **Function type `(A -> B)`:**
-- Type of functions mapping from A to B.
+- Type of functions mapping from `A` to `B`.
 - Example: `Integer -> Boolean` represents functions that take an integer and return a boolean.
 
 **Higher-order functions:**
@@ -203,7 +216,7 @@ Given index set `I` and set `S`:
 
 ---
 
-## Chapter 3: From Enumeration to Generation
+## Chapter 3: Enumeration and Generation
 
 ### Natural Numbers
 
@@ -258,10 +271,10 @@ Recursive types are defined in terms of themselves.
 - `List(A) = Empty | Cons(A, List(A))`
 - A list is either empty or an element paired with another list
 
-**Example lists over N:**
-- Empty
-- Cons(1, Empty)
-- Cons(2, Cons(1, Empty))
+**Example lists over `N`:**
+- `Empty`
+- `Cons(1, Empty)`
+- `Cons(2, Cons(1, Empty))`
 
 **Tree type:**
 - `Tree(A) = Leaf | Node(Tree(A), A, Tree(A))`
@@ -285,11 +298,11 @@ A function is recursive if it calls itself.
 
 ### Combinatorics
 
-**Permutations of k from n:**
+**Permutations of `k` from `n`:**
 - Recursive: `P(n, k) = n * P(n-1, k-1)`
 - Closed form: `P(n, k) = n!/(n-k)!`
 
-**Permutations of n objects:**
+**Permutations of `n` objects:**
 - `P(n) = n!`
 
 **Combinations:**
@@ -298,7 +311,7 @@ A function is recursive if it calls itself.
 
 ---
 
-## Chapter 4: From Plurality to Uncertainty
+## Chapter 4: Plurality and Uncertainty
 
 ### Construction of Number Systems
 
@@ -310,7 +323,7 @@ Number systems are constructed from simpler ones using equivalence relations.
 **Rationals `Q = {p/q | p, q in Z, q != 0}`**
 - Construction: equivalence classes on `Z CROSS (Z - {0})`
 
-**Reals R (all points on the number line)**
+**Reals `R` (all points on the number line)**
 - Construction: Dedekind cuts or Cauchy sequences of rationals
 
 ### Algebraic Structures
@@ -318,7 +331,7 @@ Number systems are constructed from simpler ones using equivalence relations.
 An algebraic structure is a set equipped with one or more operations satisfying specific axioms.
 
 **Formal definition:**
-- `(S, *)` where S is a set and `* : S CROSS S -> S` is a binary operation
+- `(S, *)` where `S` is a set and `* : S CROSS S -> S` is a binary operation
 
 Different axioms define different structures: monoids, groups, rings, fields.
 
@@ -329,7 +342,7 @@ A monoid is a set with an associative binary operation and an identity element.
 **Definition:**
 `(M, *, e)` where:
 - `* : M CROSS M -> M` (binary operation)
-- `FOR ALL a, b, c IN M:`
+- `FOR ALL a, b, c IN M`:
   - `(a * b) * c = a * (b * c)` (associativity)
   - `e * a = a * e = a` (identity)
 
@@ -349,14 +362,14 @@ Monoids are a fundamental structure in abstract algebra, along with groups, ring
 
 **Limit of a sequence:**
 
-A sequence `(s_n)` has limit L if:
+A sequence `(s_n)` has limit `L` if:
 - `FOR ALL epsilon > 0, EXISTS N, FOR ALL n >= N, dist(s_n, L) < epsilon`
 
-where `dist(a, b)` is the distance between a and b.
+where `dist(a, b)` is the distance between `a` and `b`.
 
 Notation: `LIM (n -> infinity) s_n = L`
 
-The sequence gets arbitrarily close to L for sufficiently large n.
+The sequence gets arbitrarily close to `L` for sufficiently large `n`.
 
 **Convergence:**
 - A sequence converges if it has a finite limit.
@@ -365,8 +378,8 @@ The sequence gets arbitrarily close to L for sufficiently large n.
 ### Sample Spaces and Events
 
 A probability space consists of:
-- Sample space Omega - set of all possible outcomes
-- Event - subset of Omega
+- Sample space `Omega` - set of all possible outcomes
+- Event - subset of `Omega`
 
 **Example:**
 - Coin flip: `Omega = {H, T}`
@@ -374,20 +387,20 @@ A probability space consists of:
 
 ### Probability Function
 
-A probability function P assigns probabilities to events.
+A probability function `P` assigns probabilities to events.
 
 **Axioms:**
 - `P(Omega) = 1`
-- `P(A) >= 0` for all events A
-- `P(A UNION B) = P(A) + P(B)` when A, B are disjoint
+- `P(A) >= 0` for all events `A`
+- `P(A UNION B) = P(A) + P(B)` when `A`, `B` are disjoint
 
 ### Conditional Probability
 
-**Conditional probability of A given B:**
+**Conditional probability of `A` given `B`:**
 - `P(A | B) = P(A AND B) / P(B)`
 
 **Independence:**
-- Events A and B are independent if `P(A AND B) = P(A) * P(B)`
+- Events `A` and `B` are independent if `P(A AND B) = P(A) * P(B)`
 
 ### Random Variables
 
@@ -396,23 +409,23 @@ A random variable is a function from the sample space to real numbers.
 **Formal definition:**
 - `X: Omega -> R`
 
-**Probability mass function for discrete random variable X:**
-- `p(x) = P(X = x)` for each value x
+**Probability mass function for discrete random variable `X`:**
+- `p(x) = P(X = x)` for each value `x`
 
 **Properties:**
-- `SUM p(x) = 1` (over all possible values x)
-- `p(x) >= 0` for all x
+- `SUM p(x) = 1` (over all possible values `x`)
+- `p(x) >= 0` for all `x`
 
 ### Expected Value
 
-The expected value (mean) of discrete random variable X:
+The expected value (mean) of discrete random variable `X`:
 - `E[X] = SUM(xi * p(xi))`
 
-where the sum is over all values xi with `p(xi) > 0`.
+where the sum is over all values `xi` with `p(xi) > 0`.
 
 ### Variance
 
-The variance of discrete random variable X:
+The variance of discrete random variable `X`:
 - `Var(X) = E[(X - E[X])^2] = E[X^2] - (E[X])^2`
 - `= SUM((xi - E[X])^2 * p(xi))`
 
@@ -421,14 +434,14 @@ The variance of discrete random variable X:
 
 ### Covariance
 
-Covariance of discrete random variables X and Y:
+Covariance of discrete random variables `X` and `Y`:
 - `Cov(X, Y) = E[(X - E[X])(Y - E[Y])]`
 - `= SUM SUM((xi - E[X])(yj - E[Y]) * p(xi, yj))`
 
 **Correlation (normalized covariance):**
 - `Cor(X, Y) = Cov(X, Y) / (SD(X) * SD(Y))`
 
-Ranges from -1 to 1.
+Ranges from `-1` to `1`.
 
 ### Limit Theorems
 
@@ -446,27 +459,27 @@ Standardized sum of independent random variables converges to normal distributio
 
 Entropy measures uncertainty in a random variable.
 
-For discrete random variable X with probabilities `p1, p2, ..., pn`:
+For discrete random variable `X` with probabilities `p1, p2, ..., pn`:
 - `H(X) = - SUM(pi * log_2(pi))`
 
 Measured in bits:
 - 1 bit = one binary choice
-- `H(X)` = average bits needed to encode X
+- `H(X)` = average bits needed to encode `X`
 
 ### Mutual Information
 
 Mutual information measures shared information between random variables.
 
-For random variables X and Y:
+For random variables `X` and `Y`:
 - `I(X; Y) = H(X) + H(Y) - H(X, Y)`
 
 where `H(X, Y)` is joint entropy.
 
-Represents how much knowing Y reduces uncertainty about X.
+Represents how much knowing `Y` reduces uncertainty about `X`.
 
 ---
 
-## Chapter 5: From Communication to Articulation
+## Chapter 5: Notation and Articulation
 
 ### Alphabets
 
@@ -480,19 +493,19 @@ Alphabets provide the basic symbols for constructing strings.
 
 ### Strings
 
-A string over alphabet A is a finite sequence (indexed collection) over A.
+A string over alphabet `A` is a finite sequence (indexed collection) over `A`.
 
 **Notation:**
 - Empty string: `EPSILON` (length 0)
-- Length of string s: `|s|`
+- Length of string `s`: `|s|`
 - Concatenation: `s1 s2` (join strings together)
 
 **Examples over alphabet `{0, 1}`:**
-- EPSILON, 0, 1, 01, 101, 0011
+- `EPSILON`, `0`, `1`, `01`, `101`, `0011`
 
 ### Kleene Star
 
-The Kleene star `A*` is the set of all strings over alphabet A.
+The Kleene star `A*` is the set of all strings over alphabet `A`.
 
 **Formal definition:**
 - `A* = A(0) UNION A(1) UNION A(2) UNION A(3) UNION ...`
@@ -511,12 +524,12 @@ The Kleene star `A*` is the set of all strings over alphabet A.
 
 ### Regular Languages
 
-A regular language over alphabet A can be built from basic languages using regular operations.
+A regular language over alphabet `A` can be built from basic languages using regular operations.
 
 **Basic languages:**
-- `EMPTY SET` - {}
+- `EMPTY SET` - `{}`
 - `{EPSILON}` - contains only the empty string
-- `{a}` - single symbol, for each a IN A
+- `{a}` - single symbol, for each `a IN A`
 
 **Regular operations:**
 - Union: `L1 UNION L2`
@@ -537,10 +550,10 @@ A context-free grammar generates strings through production rules.
 **Definition:**
 
 `G = (V, T, P, S)` where:
-- V - set of variables (non-terminals)
-- T - set of terminals (alphabet)
-- P - set of production rules
-- S - start variable
+- `V` - set of variables (non-terminals)
+- `T` - set of terminals (alphabet)
+- `P` - set of production rules
+- `S` - start variable
 
 Production rules in BNF notation:
 - `<variable> ::= <expression>`
@@ -550,7 +563,7 @@ Production rules in BNF notation:
 - `S ::= (S)`
 - `S ::= SS`
 
-Generates: EPSILON, (), (()), ()(), (())(), ...
+Generates: `EPSILON`, `()`, `(())`, `()()`, `(())()`, ...
 
 **Example - arithmetic expressions:**
 - `<expr> ::= <number>`
@@ -568,7 +581,7 @@ These grammars define the syntax of programs.
 
 ---
 
-## Chapter 6: From Interpretation to Validation
+## Chapter 6: Mutation and Verification
 
 ### State
 
@@ -579,9 +592,8 @@ Formally, a state is a function `s: Var -> Val`
 - and `Val` is the set of values
 
 **Notation:**
-- `s(x)` - value of variable x in state s
- - `s(x)` - value of variable `x` in state `s`
-- `s[x := v]` - state identical to s except x maps to v
+- `s(x)` - value of variable `x` in state `s`
+- `s[x := v]` - state identical to `s` except `x` maps to `v`
 
 **Definition of state update:**
 - `s[x := v](y) = v` if `y = x`
@@ -613,12 +625,12 @@ This provides a compositional, mathematical meaning for programs.
 ### Rewrite Systems
 
 A rewrite system is a pair `(T, R)` where:
-- T - set of terms
-- R - set of rewrite rules (pairs of terms)
+- `T` - set of terms
+- `R` - set of rewrite rules (pairs of terms)
 
 A rewrite rule `(L, R)` is written `L -> R`.
 
-A term t rewrites to t' (written `t => t'`) if t contains L and t' replaces it with R.
+A term `t` rewrites to `t'` (written `t => t'`) if `t` contains `L` and `t'` replaces it with `R`.
 
 **Desirable properties:**
 - Confluence: if `t => t1` and `t => t2`, then `EXISTS t3` such that `t1 =>* t3` and `t2 =>* t3`
@@ -713,7 +725,7 @@ Temporal logic formalizes reasoning about execution sequences.
 
 ---
 
-## Chapter 7: From Animation to Imitation
+## Chapter 7: Automation and Imitation
 
 ### Transition Systems
 
@@ -737,8 +749,8 @@ A semiautomaton adds an input alphabet to a transition system.
 **Formal definition:**
 
 `(S, A, delta)` where:
-- S - set of states
-- A - input alphabet
+- `S` - set of states
+- `A` - input alphabet
 - `delta: S CROSS A -> S` - transition function
 
 Reading input string `a1 a2 ... an` produces state sequence:
@@ -751,17 +763,17 @@ A finite state automaton recognizes languages by accepting or rejecting strings.
 **Formal definition:**
 
 `(Q, A, delta, q0, F)` where:
-- Q - finite set of states
-- A - input alphabet
+- `Q` - finite set of states
+- `A` - input alphabet
 - `delta: Q CROSS A -> Q` - transition function (deterministic)
-- q0 - initial state
+- `q0` - initial state
 - `F SUBSET Q` - set of accept states
 
 **Deterministic FSA (DFA):**
 - `delta(q, a)` gives exactly one next state
 
 **Nondeterministic FSA (NFA):**
-- `delta: Q CROSS A -> P(Q)` (power set of Q)
+- `delta: Q CROSS A -> P(Q)` (power set of `Q`)
 - `delta(q, a)` gives a set of possible next states
 
 **Equivalence:**
@@ -815,7 +827,7 @@ A Turing machine has an infinite tape for unbounded memory.
 Read symbol on tape, write symbol, move head left (`L`) or right (`R`)
 
 **Deterministic Turing Machine (DTM):**
-- delta is a function (single transition per configuration)
+- `delta` is a function (single transition per configuration)
 
 **Nondeterministic Turing Machine (NTM):**
 - `delta: Q CROSS G -> P(Q CROSS G CROSS {L, R})`
@@ -840,7 +852,7 @@ A universal Turing machine `U` can simulate any Turing machine `M`.
 All reasonable models of computation are equivalent in power.
 
 **Equivalences:**
-- Turing machines EQUIV Lambda calculus
+- Turing machines `EQUIV` Lambda calculus
 
 These models compute exactly the same class of functions (computable functions).
 
@@ -848,7 +860,7 @@ The thesis is not a mathematical theorem but a claim about the nature of computa
 
 ---
 
-## Chapter 8: From Universality to Impossibility
+## Chapter 8: Complexity and Impossibility
 
 ### Asymptotic Complexity
 
@@ -883,7 +895,7 @@ Time complexity measures computational steps as a function of input size.
 
 ### Space Complexity
 
-Time complexity measures computational steps as a function of input size.
+Space complexity measures memory usage as a function of input size.
 
 **Common classes:**
 - `O(1)` - constant
@@ -893,14 +905,14 @@ Time complexity measures computational steps as a function of input size.
 
 ### Complexity Classes: P
 
-P is the class of decision problems solvable in polynomial time.
+`P` is the class of decision problems solvable in polynomial time.
 
 **Formal definition:**
 - `P = {L | EXISTS deterministic Turing machine M and polynomial p(n) such that M decides L in time O(p(n))}`
 
 ### Complexity Classes: NP
 
-NP is the class of decision problems verifiable in polynomial time.
+`NP` is the class of decision problems verifiable in polynomial time.
 
 **Formal definition:**
 - `NP = {L | EXISTS nondeterministic Turing machine M and polynomial p(n) such that M decides L in time O(p(n))}`
@@ -933,12 +945,12 @@ Problem `L` is `NP`-complete if:
 2. `FOR ALL A IN NP: A KARP-REDUCES-TO L`
 
 **Properties:**
-- If any NP-complete problem is in P, then P = NP
-- If any NP-complete problem is not in P, then P != NP
+- If any NP-complete problem is in `P`, then `P = NP`
+- If any NP-complete problem is not in `P`, then `P != NP`
 
 ### P vs NP Problem
 
-The P vs NP problem asks whether P = NP.
+The P vs NP problem asks whether `P = NP`.
 
 **Question:**
 
@@ -992,11 +1004,11 @@ All non-trivial properties of Turing machine languages are undecidable.
 
 **Theorem:**
 
-Let P be a property of languages such that:
-1. P is non-trivial
-2. P depends only on the language
+Let `P` be a property of languages such that:
+1. `P` is non-trivial
+2. `P` depends only on the language
 
-Then "Does Turing machine M recognize a language with property P?" is undecidable.
+Then "Does Turing machine `M` recognize a language with property `P`?" is undecidable.
 
 ### Gödel's Incompleteness Theorems
 
