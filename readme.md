@@ -641,19 +641,16 @@ Lambda calculus is a formal system for expressing computation via functions.
 Small-step semantics defines single computation steps.
 
 **Transition relation:**
-- `<e, s> -> <e', s'>`
-- Expression `e` in state `s` reduces to `e'` in state `s'`
+- `<e, s> -> <e', s'>`: Expression `e` in state `s` reduces to `e'` in state `s'`
 
 **Example rules for expressions:**
-**Example rules for expressions (small-step):**
 - `<x, s> -> <s(x), s>`
-- IF `<e1, s> -> <e1', s'>` THEN `<e1 + e2, s> -> <e1' + e2, s'>`
+- `IF <e1, s> -> <e1', s'> THEN <e1 + e2, s> -> <e1' + e2, s'>`
 
 **Example rules for statements:**
-**Example rules for statements (small-step):**
-- IF `<e, s> -> <e', s'>` THEN `<x := e, s> -> <x := e', s'>`
+- `IF <e, s> -> <e', s'> THEN <x := e, s> -> <x := e', s'>`
 - `<x := v, s> -> <skip, s[x := v]>`
-- IF `<c1, s> -> <c1', s'>` THEN `<c1; c2, s> -> <c1'; c2, s'>`
+- `IF <c1, s> -> <c1', s'> THEN <c1; c2, s> -> <c1'; c2, s'>`
 - `<skip; c2, s> -> <c2, s>`
 
 ### Operational Semantics: Big-Step
@@ -661,21 +658,16 @@ Small-step semantics defines single computation steps.
 Big-step semantics defines complete evaluation.
 
 **Evaluation relation:**
-- `<e, s> => v`
-- Expression `e` in state `s` evaluates to value `v`
+- `<e, s> => v`: Expression `e` in state `s` evaluates to value `v`
+- `<c, s> => s'`: Statement `c` in state `s` produces state `s'`
 
 **Example rules for expressions:**
-**Example rules for expressions (big-step):**
 - `<n, s> => n`
-- IF `<e1, s> => n1` AND `<e2, s> => n2` THEN `<e1 + e2, s> => n1 + n2`
+- `IF <e1, s> => n1 AND <e2, s> => n2 THEN <e1 + e2, s> => n1 + n2`
 
 **Example rules for statements:**
-
-`<c, s> => s'`: Statement `c` in state `s` produces state `s'`.
-
-**Example rules for statements (big-step):**
-- IF `<e, s> => v` THEN `<x := e, s> => s[x := v]`
-- IF `<c1, s> => s'` AND `<c2, s'> => s''` THEN `<c1; c2, s> => s''`
+- `IF <e, s> => v THEN <x := e, s> => s[x := v]`
+- `IF <c1, s> => s' AND <c2, s'> => s'' THEN <c1; c2, s> => s''`
 
 ### Hoare Logic
 
@@ -688,19 +680,19 @@ Hoare logic provides formal reasoning about program correctness.
 **Inference rules:**
 
 **Assignment:**
-- `P[x := e]` AND `{P[x := e]} x := e {P}`
+- `P[x := e] AND {P[x := e]} x := e {P}`
 
 **Sequence:**
-- IF `{P} c1 {Q}` AND `{Q} c2 {R}` THEN `{P} c1; c2 {R}`
+- `IF {P} c1 {Q} AND {Q} c2 {R} THEN {P} c1; c2 {R}`
 
 **Conditional:**
-- IF `{P AND b} c1 {Q}` AND `{P AND NOT b} c2 {Q}` THEN `{P} if b then c1 else c2 {Q}`
+- `IF {P AND b} c1 {Q} AND {P AND NOT b} c2 {Q} THEN {P} if b then c1 else c2 {Q}`
 
 **While (loop invariant `I`):**
-- IF `{I AND b} c {I}` THEN `{I} while b do c {I AND NOT b}`
+- `IF {I AND b} c {I} THEN {I} while b do c {I AND NOT b}`
 
 **Consequence:**
-- IF `P' IMPLIES P` AND `{P} c {Q}` AND `Q IMPLIES Q'` THEN `{P'} c {Q'}`
+- `IF P' IMPLIES P AND {P} c {Q} AND Q IMPLIES Q' THEN {P'} c {Q'}`
 
 **Example:**
 - `{x = 5} y := x + 1 {y = 6}`
