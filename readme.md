@@ -67,7 +67,7 @@ Extends propositional logic with quantifiers over objects.
 - To prove P, split into exhaustive cases and prove each.
 
 **Counterexample:**
-- To disprove FOR ALL x, P(x), find one x where P(x) is false.
+- To disprove `FOR ALL x, P(x)`, find one `x` where `P(x)` is false.
 
 ---
 
@@ -79,15 +79,15 @@ A set is a collection of distinct objects.
 
 **Notation:**
 - `{1, 2, 3}` - explicit set
-- `x IN S` - x is an element of S
-- `A SUBSET B` - every element of A is in B
+- `x IN S` - `x` is an element of `S`
+- `A SUBSET B` - every element of `A` is in `B`
 - `EMPTY SET` - the set with no elements
 
 **Operations:**
-- `A UNION B` - elements in A or B
-- `A INTERSECT B` - elements in both A and B
-- `A MINUS B` - elements in A but not in B
-- `POWER SET of A` - set of all subsets of A
+- `A UNION B` - elements in `A` or `B`
+- `A INTERSECT B` - elements in both `A` and `B`
+- `A MINUS B` - elements in `A` but not in `B`
+- `POWER SET of A` - set of all subsets of `A`
 
 ### Cartesian Product
 
@@ -123,14 +123,14 @@ A relation R from set A to set B is a subset of `A CROSS B`.
 Given a relation E on a set V, we can visualize it as a graph.
 
 A graph `G = (V, E)` consists of:
-- V - set of vertices
-- E - edges on V `(E SUBSET V CROSS V)`
+- `V` - set of vertices
+- `E` - edges on `V` (`E SUBSET V CROSS V`)
   
-If `(u, v) IN E`, we say there is an edge from u to v.
+If `(u, v) IN E`, we say there is an edge from `u` to `v`.
 
 **Types:**
-- Directed graph: relation E using ordered pairs `(u, v)`
-- Undirected graph: relation E is symmetric
+- Directed graph: relation `E` using ordered pairs `(u, v)`
+- Undirected graph: relation `E` is symmetric
 
 **Terminology:**
 - Path: sequence `v1, v2, ..., vn` where `(vi, vi+1) IN E`
@@ -144,8 +144,6 @@ An equivalence relation is reflexive, symmetric, and transitive.
 
 **Notation:**
 - `a EQUALS b` (a and b are equivalent)
-
-In programming, equality (=) is an equivalence relation.
 
 **Equivalence class of x:**
 - `[x] = {y | x EQUALS y}`
@@ -189,9 +187,9 @@ A function `f: A -> B` is a subset of `A CROSS B` where:
 
 An indexed collection is a function from an index set to a set of values.
 
-Given index set I and set S:
+Given index set `I` and set `S`:
 - `f: I -> S`
-- For each `i IN I`, `f(i)` is an element of S
+- For each `i IN I`, `f(i)` is an element of `S`
 
 ### Algebraic Data Types: Function Types
 
@@ -226,8 +224,8 @@ A sequence is an indexed collection using natural numbers as the index set.
 - `s(0), s(1), s(2), ...` or `s_0, s_1, s_2, ...`
 
 **Finite sequences:**
-- Functions from `{0, 1, ..., n-1}` to S
-- Length n sequence
+- Functions from `{0, 1, ..., n-1}` to `S`
+- Length `n` sequence
 
 ### Mathematical Induction
 
@@ -577,11 +575,12 @@ These grammars define the syntax of programs.
 A state represents the values of program variables.
 
 Formally, a state is a function `s: Var -> Val`
-- where Var is the set of variables
-- and Val is the set of values
+- where `Var` is the set of variables
+- and `Val` is the set of values
 
 **Notation:**
 - `s(x)` - value of variable x in state s
+ - `s(x)` - value of variable `x` in state `s`
 - `s[x := v]` - state identical to s except x maps to v
 
 **Definition of state update:**
@@ -604,7 +603,7 @@ Each construct maps to a mathematical object:
 
 **For statements:**
 - `[[x := e]](s) = s[x := [[e]](s)]`
-  - (state where x maps to value of e)
+  - (state where `x` maps to value of `e`)
 
 - `[[c1; c2]](s) = [[c2]]([[c1]](s))`
   - (compose state transformations)
@@ -635,7 +634,7 @@ Lambda calculus is a formal system for expressing computation via functions.
 
 **Beta-reduction:**
 - `(LAMBDA x. M) N ==> M[x := N]`
-- where `M[x := N]` substitutes N for free occurrences of x in M.
+  - where `M[x := N]` substitutes `N` for free occurrences of `x` in `M`.
 
 ### Operational Semantics: Small-Step
 
@@ -643,7 +642,7 @@ Small-step semantics defines single computation steps.
 
 **Transition relation:**
 - `<e, s> -> <e', s'>`
-- Expression e in state s reduces to e' in state s'
+- Expression `e` in state `s` reduces to `e'` in state `s'`
 
 **Example rules for expressions:**
 ```
@@ -672,7 +671,7 @@ Big-step semantics defines complete evaluation.
 
 **Evaluation relation:**
 - `<e, s> => v`
-- Expression e in state s evaluates to value v
+- Expression `e` in state `s` evaluates to value `v`
 
 **Example rules for expressions:**
 ```
@@ -687,7 +686,7 @@ Big-step semantics defines complete evaluation.
 
 `<c, s> => s'`
 
-Statement c in state s produces state s'
+Statement `c` in state `s` produces state `s'`
 
 ```
 <x := e, s> => s[x := [[e]](s)]
@@ -703,7 +702,7 @@ Hoare logic provides formal reasoning about program correctness.
 
 **Judgment:**
 - `{P} c {Q}`
-- where P, Q are assertions (predicates on states), c is a command
+- where `P`, `Q` are assertions (predicates on states), `c` is a command
 
 **Inference rules:**
 
@@ -769,11 +768,11 @@ A transition system models state evolution through discrete transitions.
 **Formal definition:**
 
 `(S, s0, T)` where:
-- S - set of states
-- s0 - initial state
-- `T SUBSET S CROSS S` - transition relation
+- `S` - set of states
+- `s0` - initial state
+- `T` - transition relation (`T SUBSET S CROSS S`)
 
-A transition `(s, s') IN T` means the system can move from state s to s'.
+A transition `(s, s') IN T` means the system can move from state `s` to `s'`.
 
 **Execution:** sequence of states `s0, s1, s2, ...` where `(si, si+1) IN T`
 
@@ -849,17 +848,17 @@ A Turing machine has an infinite tape for unbounded memory.
 **Formal definition:**
 
 `(Q, A, G, delta, q0, qaccept, qreject)` where:
-- Q - finite set of states
-- A - input alphabet
-- G - tape alphabet `(A SUBSET G)`
+- `Q` - finite set of states
+- `A` - input alphabet
+- `G` - tape alphabet (`A SUBSET G`)
 - `delta: Q CROSS G -> Q CROSS G CROSS {L, R}` - transition function
-- q0 - initial state
-- qaccept - accept state
-- qreject - reject state
+- `q0` - initial state
+- `qaccept` - accept state
+- `qreject` - reject state
 
 **Operation:**
 
-Read symbol on tape, write symbol, move head left (L) or right (R)
+Read symbol on tape, write symbol, move head left (`L`) or right (`R`)
 
 **Deterministic Turing Machine (DTM):**
 - delta is a function (single transition per configuration)
@@ -872,15 +871,15 @@ Read symbol on tape, write symbol, move head left (L) or right (R)
 
 ### Universal Turing Machine
 
-A universal Turing machine U can simulate any Turing machine M.
+A universal Turing machine `U` can simulate any Turing machine `M`.
 
-**Input to U:**
-- `<M, w>` (encoded string representing machine M and input w)
+**Input to `U`:**
+- `<M, w>` (encoded string representing machine `M` and input `w`)
 
 **Operation:**
-- U simulates M on input w
-- U accepts if M accepts w
-- U rejects if M rejects w
+- `U` simulates `M` on input `w`
+- `U` accepts if `M` accepts `w`
+- `U` rejects if `M` rejects `w`
 
 ### Church-Turing Thesis
 
@@ -961,13 +960,13 @@ A polynomial-time reduction (Karp reduction) transforms one problem to another i
 
 **Formal definition:**
 
-A KARP-REDUCES-TO B if:
+`A KARP-REDUCES-TO B` if:
 - `EXISTS polynomial-time computable function f such that:`
 - `FOR ALL x: x IN A IFF f(x) IN B`
 
 **Properties:**
-- If A KARP-REDUCES-TO B and B IN P, then A IN P
-- If A KARP-REDUCES-TO B and A NOT IN P, then B NOT IN P
+- If `A KARP-REDUCES-TO B` and `B IN P`, then `A IN P`
+- If `A KARP-REDUCES-TO B` and `A NOT IN P`, then `B NOT IN P`
 
 ### NP-Completeness
 
@@ -975,9 +974,9 @@ A problem is NP-complete if it is in NP and every problem in NP reduces to it.
 
 **Formal definition:**
 
-Problem L is NP-complete if:
-1. L IN NP
-2. FOR ALL A IN NP: A KARP-REDUCES-TO L
+Problem `L` is `NP`-complete if:
+1. `L IN NP`
+2. `FOR ALL A IN NP: A KARP-REDUCES-TO L`
 
 **Properties:**
 - If any NP-complete problem is in P, then P = NP
@@ -999,12 +998,12 @@ A Turing reduction solves one problem using another as an oracle (a hypothetical
 
 **Formal definition:**
 
-A TURING-REDUCES-TO B if:
-- EXISTS Turing machine M with oracle for B such that M decides A
+`A TURING-REDUCES-TO B` if:
+- `EXISTS` Turing machine `M` with oracle for `B` such that `M` decides `A`
 
 **Properties:**
-- If B is decidable, then A is decidable
-- If A is undecidable, then B is undecidable
+- If `B` is decidable, then `A` is decidable
+- If `A` is undecidable, then `B` is undecidable
 
 ### Halting Problem
 
