@@ -1,0 +1,178 @@
+=================================================
+Chapter 8: From Universality to Impossibility
+=================================================
+
+Asymptotic Complexity
+---------------------
+
+Asymptotic notation describes function growth as input approaches infinity.
+
+Big-O (upper bound):
+  f(n) = O(g(n)) if:
+  EXISTS c IN R+, EXISTS n0 IN N, FOR ALL n >= n0: f(n) <= c * g(n)
+
+Big-Omega (lower bound):
+  f(n) = Omega(g(n)) if:
+  EXISTS c IN R+, EXISTS n0 IN N, FOR ALL n >= n0: f(n) >= c * g(n)
+
+Big-Theta (tight bound):
+  f(n) = Theta(g(n)) if:
+  f(n) = O(g(n)) AND f(n) = Omega(g(n))
+
+
+Time Complexity
+---------------
+
+Time complexity measures computational steps as a function of input size.
+
+Common classes:
+  O(1)       - constant
+  O(log n)   - logarithmic
+  O(n)       - linear
+  O(n log n) - linearithmic
+  O(n^2)     - quadratic
+  O(2^n)     - exponential
+
+
+Space Complexity
+----------------
+
+Time complexity measures computational steps as a function of input size.
+
+Common classes:
+  O(1)    - constant
+  O(log n) - logarithmic
+  O(n)    - linear
+  O(n^k)  - polynomial
+
+
+Complexity Classes: P
+---------------------
+
+P is the class of decision problems solvable in polynomial time.
+
+Formal definition:
+  P = {L | EXISTS deterministic Turing machine M and polynomial p(n)
+           such that M decides L in time O(p(n))}
+
+
+Complexity Classes: NP
+----------------------
+
+NP is the class of decision problems verifiable in polynomial time.
+
+Formal definition:
+  NP = {L | EXISTS nondeterministic Turing machine M and polynomial p(n)
+            such that M decides L in time O(p(n))}
+
+Equivalently:
+  NP = {L | EXISTS polynomial-time verifier (algorithm) V such that:
+            x IN L IFF EXISTS certificate c where V(x, c) accepts (returns YES)}
+
+
+Polynomial-Time Reductions
+---------------------------
+
+A polynomial-time reduction (Karp reduction) transforms one problem to another 
+in polynomial time.
+
+Formal definition:
+  A KARP-REDUCES-TO B if:
+  EXISTS polynomial-time computable function f such that:
+  FOR ALL x: x IN A IFF f(x) IN B
+
+Properties:
+  If A KARP-REDUCES-TO B and B IN P, then A IN P
+  If A KARP-REDUCES-TO B and A NOT IN P, then B NOT IN P
+
+
+NP-Completeness
+---------------
+
+A problem is NP-complete if it is in NP and every problem in NP reduces to it.
+
+Formal definition:
+  Problem L is NP-complete if:
+    1. L IN NP
+    2. FOR ALL A IN NP: A KARP-REDUCES-TO L
+
+Properties:
+  If any NP-complete problem is in P, then P = NP
+  If any NP-complete problem is not in P, then P != NP
+
+
+P vs NP Problem
+---------------
+
+The P vs NP problem asks whether P = NP.
+
+Question:
+  Can every problem whose solution is verifiable in polynomial time
+  also be solved in polynomial time?
+
+Status: Open problem
+
+
+Turing Reductions
+-----------------
+
+A Turing reduction solves one problem using another as an oracle 
+(a hypothetical subroutine that solves a problem in one step).
+
+Formal definition:
+  A TURING-REDUCES-TO B if:
+  EXISTS Turing machine M with oracle for B such that M decides A
+
+Properties:
+  If B is decidable, then A is decidable
+  If A is undecidable, then B is undecidable
+
+
+Halting Problem
+---------------
+
+The halting problem: Given encoding of Turing machine M and input w,
+does M halt on w?
+
+Input: <M, w> where <M> is the encoding of a Turing machine M, w is a string
+Output: YES if M halts on w, NO if M loops forever
+
+Theorem: The halting problem is undecidable.
+
+Proof by contradiction:
+  Assume H decides the halting problem (H accepts <M, w> iff M halts on w).
+  
+  Construct machine D:
+    D(<M>):
+      if H(<M>, <M>) accepts: loop forever
+      if H(<M>, <M>) rejects: halt
+  
+  Consider D(<D>):
+    If H(<D>, <D>) accepts: D(<D>) loops (contradiction)
+    If H(<D>, <D>) rejects: D(<D>) halts (contradiction)
+  
+  Therefore H cannot exist.
+
+
+Rice's Theorem
+--------------
+
+All non-trivial properties of Turing machine languages are undecidable.
+
+Theorem:
+  Let P be a property of languages such that:
+    1. P is non-trivial
+    2. P depends only on the language
+  
+  Then "Does Turing machine M recognize a language with property P?"
+  is undecidable.
+
+
+Gödel's Incompleteness Theorems
+--------------------------------
+
+In any consistent formal system capable of expressing arithmetic, there exist
+true statements that cannot be proven.
+
+Incompleteness in logic and undecidability in computation both reveal fundamental
+limits of formal systems.
