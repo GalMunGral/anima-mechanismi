@@ -17,9 +17,9 @@ From Certainty to Impossibility: An Index of Computer Science
 > 
 > *Pearls wash ashore,*  
 > *gleaming in our palms,*  
-> *but seeds that slip and fall*  
-> *root into trees,*  
-> *trees into forests,*  
+> *but seeds that slip and fall—*  
+> *they become trees,*  
+> *and trees become forests,*  
 > *and we become dust.*
 > 
 > *After brilliance fades,*  
