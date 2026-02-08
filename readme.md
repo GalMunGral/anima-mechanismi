@@ -21,7 +21,7 @@ An Index of Computer Science for Practitioners
 
 ## Chapter 1: From Particularity to Universality
 
-#### Propositional Logic
+### Propositional Logic
 
 A proposition is a statement that is either true or false.
 
@@ -36,7 +36,7 @@ A proposition is a statement that is either true or false.
 - `NOT (P AND Q) IFF (NOT P) OR (NOT Q)`
 - `NOT (P OR Q) IFF (NOT P) AND (NOT Q)`
 
-#### First-Order Logic
+### First-Order Logic
 
 Extends propositional logic with quantifiers over objects.
 
@@ -48,7 +48,7 @@ Extends propositional logic with quantifiers over objects.
 - Bound variable: quantified by FOR ALL or EXISTS
 - Free variable: not quantified
 
-#### Proof Techniques
+### Proof Techniques
 
 **Direct proof:**
 - To prove P IMPLIES Q, assume P is true and derive Q.
@@ -69,7 +69,7 @@ Extends propositional logic with quantifiers over objects.
 
 ## Chapter 2: From Collection to Connection
 
-#### Set
+### Set
 
 A set is a collection of distinct objects.
 
@@ -85,14 +85,14 @@ A set is a collection of distinct objects.
 - `A MINUS B` - elements in A but not in B
 - `POWER SET of A` - set of all subsets of A
 
-#### Cartesian Product
+### Cartesian Product
 
 The Cartesian product of sets A and B is the set of all ordered pairs.
 
 **Notation:**
 - `A CROSS B = {(a, b) | a IN A AND b IN B}`
 
-#### Algebraic Data Types: Products and Sums
+### Algebraic Data Types: Products and Sums
 
 **Product type `(A CROSS B)`:**
 - Combines two types into ordered pairs.
@@ -101,7 +101,7 @@ The Cartesian product of sets A and B is the set of all ordered pairs.
 - `({left} CROSS A) UNION ({right} CROSS B)`
 - Disjoint union - element from A or B, tagged with origin.
 
-#### Relations
+### Relations
 
 A relation R from set A to set B is a subset of `A CROSS B`.
 
@@ -114,7 +114,7 @@ A relation R from set A to set B is a subset of `A CROSS B`.
 - Transitive: `FOR ALL x, y, z, (x R y AND y R z) IMPLIES (x R z)`
 - Antisymmetric: `FOR ALL x, y, (x R y AND y R x) IMPLIES (x = y)`
 
-#### Graphs
+### Graphs
 
 Given a relation E on a set V, we can visualize it as a graph.
 
@@ -134,7 +134,7 @@ If `(u, v) IN E`, we say there is an edge from u to v.
 - Connected: `FOR ALL u, v IN V, EXISTS path from u to v`
 - Tree: connected graph with no cycles
 
-#### Equivalence Relations
+### Equivalence Relations
 
 An equivalence relation is reflexive, symmetric, and transitive.
 
@@ -149,7 +149,7 @@ In programming, equality (=) is an equivalence relation.
 **Partition:**
 - An equivalence relation divides a set into disjoint equivalence classes.
 
-#### Partial Orders
+### Partial Orders
 
 A partial order is a relation that is reflexive, antisymmetric, and transitive.
 
@@ -163,7 +163,7 @@ A partial order is a relation that is reflexive, antisymmetric, and transitive.
 - Least: precedes all elements
 - Greatest: all elements precede it
 
-#### Functions
+### Functions
 
 A function is a special relation where each input maps to exactly one output.
 
@@ -181,7 +181,7 @@ A function `f: A -> B` is a subset of `A CROSS B` where:
 **Composition:**
 - `(g * f)(x) = g(f(x))` - apply f, then apply g
 
-#### Indexed Collections
+### Indexed Collections
 
 An indexed collection is a function from an index set to a set of values.
 
@@ -189,7 +189,7 @@ Given index set I and set S:
 - `f: I -> S`
 - For each `i IN I`, `f(i)` is an element of S
 
-#### Algebraic Data Types: Function Types
+### Algebraic Data Types: Function Types
 
 **Function type `(A -> B)`:**
 - Type of functions mapping from A to B.
@@ -203,7 +203,7 @@ Given index set I and set S:
 
 ## Chapter 3: From Enumeration to Generation
 
-#### Natural Numbers
+### Natural Numbers
 
 The natural numbers `N = {0, 1, 2, 3, ...}` represent counting.
 
@@ -213,7 +213,7 @@ Construction via Peano axioms (details omitted):
 - Zero is not the successor of any number
 - Different numbers have different successors
 
-#### Sequences
+### Sequences
 
 A sequence is an indexed collection using natural numbers as the index set.
 
@@ -225,7 +225,7 @@ A sequence is an indexed collection using natural numbers as the index set.
 - Functions from `{0, 1, ..., n-1}` to S
 - Length n sequence
 
-#### Mathematical Induction
+### Mathematical Induction
 
 Principle of Mathematical Induction:
 
@@ -236,7 +236,7 @@ To prove `FOR ALL n IN N, P(n)`:
 **Strong induction:**
 - Inductive step uses `P(0), P(1), ..., P(k)` to prove `P(k+1)`
 
-#### Inductive Definitions
+### Inductive Definitions
 
 Objects defined recursively using base cases and inductive rules.
 
@@ -248,7 +248,7 @@ Objects defined recursively using base cases and inductive rules.
 - `sum(0) = 0` (base case)
 - `sum(n) = n + sum(n-1)` (inductive case)
 
-#### Algebraic Data Types: Recursive Types
+### Algebraic Data Types: Recursive Types
 
 Recursive types are defined in terms of themselves.
 
@@ -265,7 +265,7 @@ Recursive types are defined in terms of themselves.
 - `Tree(A) = Leaf | Node(Tree(A), A, Tree(A))`
 - A tree is either a leaf or a node with left subtree, value, right subtree
 
-#### Recursion
+### Recursion
 
 A function is recursive if it calls itself.
 
@@ -281,7 +281,7 @@ A function is recursive if it calls itself.
 **Termination requires:**
 - Each recursive call moves toward base case
 
-#### Combinatorics
+### Combinatorics
 
 **Permutations of k from n:**
 - Recursive: `P(n, k) = n * P(n-1, k-1)`
@@ -298,7 +298,7 @@ A function is recursive if it calls itself.
 
 ## Chapter 4: From Plurality to Uncertainty
 
-#### Construction of Number Systems
+### Construction of Number Systems
 
 Number systems are constructed from simpler ones using equivalence relations.
 
@@ -311,7 +311,7 @@ Number systems are constructed from simpler ones using equivalence relations.
 **Reals R (all points on the number line)**
 - Construction: Dedekind cuts or Cauchy sequences of rationals
 
-#### Algebraic Structures
+### Algebraic Structures
 
 An algebraic structure is a set equipped with one or more operations satisfying specific axioms.
 
@@ -320,7 +320,7 @@ An algebraic structure is a set equipped with one or more operations satisfying 
 
 Different axioms define different structures: monoids, groups, rings, fields.
 
-#### Monoids
+### Monoids
 
 A monoid is a set with an associative binary operation and an identity element.
 
@@ -343,7 +343,7 @@ Monoids are a fundamental structure in abstract algebra, along with groups, ring
 - `(sequences over A, concatenation, empty sequence)`
 - `(lists over A, concatenation, empty list)`
 
-#### Limits and Convergence
+### Limits and Convergence
 
 **Limit of a sequence:**
 
@@ -360,7 +360,7 @@ The sequence gets arbitrarily close to L for sufficiently large n.
 - A sequence converges if it has a finite limit.
 - A series `SUM(a_n)` converges if its partial sums converge.
 
-#### Sample Spaces and Events
+### Sample Spaces and Events
 
 A probability space consists of:
 - Sample space Omega - set of all possible outcomes
@@ -370,7 +370,7 @@ A probability space consists of:
 - Coin flip: `Omega = {H, T}`
 - Die roll: `Omega = {1, 2, 3, 4, 5, 6}`
 
-#### Probability Function
+### Probability Function
 
 A probability function P assigns probabilities to events.
 
@@ -379,7 +379,7 @@ A probability function P assigns probabilities to events.
 - `P(A) >= 0` for all events A
 - `P(A UNION B) = P(A) + P(B)` when A, B are disjoint
 
-#### Conditional Probability
+### Conditional Probability
 
 **Conditional probability of A given B:**
 - `P(A | B) = P(A AND B) / P(B)`
@@ -387,7 +387,7 @@ A probability function P assigns probabilities to events.
 **Independence:**
 - Events A and B are independent if `P(A AND B) = P(A) * P(B)`
 
-#### Random Variables
+### Random Variables
 
 A random variable is a function from the sample space to real numbers.
 
@@ -401,14 +401,14 @@ A random variable is a function from the sample space to real numbers.
 - `SUM p(x) = 1` (over all possible values x)
 - `p(x) >= 0` for all x
 
-#### Expected Value
+### Expected Value
 
 The expected value (mean) of discrete random variable X:
 - `E[X] = SUM(xi * p(xi))`
 
 where the sum is over all values xi with `p(xi) > 0`.
 
-#### Variance
+### Variance
 
 The variance of discrete random variable X:
 - `Var(X) = E[(X - E[X])^2] = E[X^2] - (E[X])^2`
@@ -417,7 +417,7 @@ The variance of discrete random variable X:
 **Standard deviation:**
 - `SD(X) = sqrt(Var(X))`
 
-#### Covariance
+### Covariance
 
 Covariance of discrete random variables X and Y:
 - `Cov(X, Y) = E[(X - E[X])(Y - E[Y])]`
@@ -428,7 +428,7 @@ Covariance of discrete random variables X and Y:
 
 Ranges from -1 to 1.
 
-#### Limit Theorems
+### Limit Theorems
 
 **Law of Large Numbers:**
 
@@ -440,7 +440,7 @@ Sample mean converges to population mean as sample size increases.
 
 Standardized sum of independent random variables converges to normal distribution.
 
-#### Entropy
+### Entropy
 
 Entropy measures uncertainty in a random variable.
 
@@ -451,7 +451,7 @@ Measured in bits:
 - 1 bit = one binary choice
 - `H(X)` = average bits needed to encode X
 
-#### Mutual Information
+### Mutual Information
 
 Mutual information measures shared information between random variables.
 
@@ -466,7 +466,7 @@ Represents how much knowing Y reduces uncertainty about X.
 
 ## Chapter 5: From Communication to Articulation
 
-#### Alphabets
+### Alphabets
 
 An alphabet is a finite set of symbols.
 
@@ -476,7 +476,7 @@ An alphabet is a finite set of symbols.
 
 Alphabets provide the basic symbols for constructing strings.
 
-#### Strings
+### Strings
 
 A string over alphabet A is a finite sequence (indexed collection) over A.
 
@@ -488,7 +488,7 @@ A string over alphabet A is a finite sequence (indexed collection) over A.
 **Examples over alphabet `{0, 1}`:**
 - EPSILON, 0, 1, 01, 101, 0011
 
-#### Kleene Star
+### Kleene Star
 
 The Kleene star `A*` is the set of all strings over alphabet A.
 
@@ -507,7 +507,7 @@ The Kleene star `A*` is the set of all strings over alphabet A.
 
 `A+` denotes all non-empty strings `(A* - {EPSILON})`.
 
-#### Regular Languages
+### Regular Languages
 
 A regular language over alphabet A can be built from basic languages using regular operations.
 
@@ -528,7 +528,7 @@ Regular languages are closed under union, intersection, complement, concatenatio
 
 Regular expressions provide notation for describing regular languages.
 
-#### Context-Free Languages
+### Context-Free Languages
 
 A context-free grammar generates strings through production rules.
 
@@ -568,7 +568,7 @@ These grammars define the syntax of programs.
 
 ## Chapter 6: From Interpretation to Validation
 
-#### State
+### State
 
 A state represents the values of program variables.
 
@@ -584,7 +584,7 @@ Formally, a state is a function `s: Var -> Val`
 - `s[x := v](y) = v` if `y = x`
 - `s[x := v](y) = s(y)` if `y != x`
 
-#### Denotational Semantics
+### Denotational Semantics
 
 Denotational semantics interprets programs as mathematical functions.
 
@@ -607,7 +607,7 @@ Each construct maps to a mathematical object:
 
 This provides a compositional, mathematical meaning for programs.
 
-#### Rewrite Systems
+### Rewrite Systems
 
 A rewrite system is a pair `(T, R)` where:
 - T - set of terms
@@ -622,7 +622,7 @@ A term t rewrites to t' (written `t => t'`) if t contains L and t' replaces it w
 - Termination: no infinite rewrite sequences exist
 - Normal form: a term that cannot be rewritten further
 
-#### Lambda Calculus
+### Lambda Calculus
 
 Lambda calculus is a formal system for expressing computation via functions.
 
@@ -633,7 +633,7 @@ Lambda calculus is a formal system for expressing computation via functions.
 - `(LAMBDA x. M) N ==> M[x := N]`
 - where `M[x := N]` substitutes N for free occurrences of x in M.
 
-#### Operational Semantics: Small-Step
+### Operational Semantics: Small-Step
 
 Small-step semantics defines single computation steps.
 
@@ -662,7 +662,7 @@ Small-step semantics defines single computation steps.
 <skip; c2, s> -> <c2, s>
 ```
 
-#### Operational Semantics: Big-Step
+### Operational Semantics: Big-Step
 
 Big-step semantics defines complete evaluation.
 
@@ -693,7 +693,7 @@ Statement c in state s produces state s'
 <c1; c2, s> => s''
 ```
 
-#### Hoare Logic
+### Hoare Logic
 
 Hoare logic provides formal reasoning about program correctness.
 
@@ -741,7 +741,7 @@ P' IMPLIES P    {P} c {Q}    Q IMPLIES Q'
 - `{x = 5} y := x + 1 {y = 6}`
 - `{x > 0} while x > 0 do x := x - 1 {x = 0}`
 
-#### Temporal Logic
+### Temporal Logic
 
 Temporal logic formalizes reasoning about execution sequences.
 
@@ -758,7 +758,7 @@ Temporal logic formalizes reasoning about execution sequences.
 
 ## Chapter 7: From Animation to Imitation
 
-#### Transition Systems
+### Transition Systems
 
 A transition system models state evolution through discrete transitions.
 
@@ -773,7 +773,7 @@ A transition `(s, s') IN T` means the system can move from state s to s'.
 
 **Execution:** sequence of states `s0, s1, s2, ...` where `(si, si+1) IN T`
 
-#### Semiautomata
+### Semiautomata
 
 A semiautomaton adds an input alphabet to a transition system.
 
@@ -787,7 +787,7 @@ A semiautomaton adds an input alphabet to a transition system.
 Reading input string `a1 a2 ... an` produces state sequence:
 - `s0, delta(s0, a1), delta(delta(s0, a1), a2), ...`
 
-#### Finite State Automata
+### Finite State Automata
 
 A finite state automaton recognizes languages by accepting or rejecting strings.
 
@@ -813,7 +813,7 @@ For every NFA, there exists an equivalent DFA recognizing the same language.
 
 Construction: subset construction (states of DFA = subsets of NFA states)
 
-#### Pushdown Automata
+### Pushdown Automata
 
 A pushdown automaton extends FSA with a stack for unbounded memory.
 
@@ -838,7 +838,7 @@ Note: Deterministic and nondeterministic PDAs are NOT equivalent.
 
 Nondeterministic PDAs recognize exactly the context-free languages.
 
-#### Turing Machines
+### Turing Machines
 
 A Turing machine has an infinite tape for unbounded memory.
 
@@ -866,7 +866,7 @@ Read symbol on tape, write symbol, move head left (L) or right (R)
 
 **Equivalence:** DTM and NTM recognize the same languages.
 
-#### Universal Turing Machine
+### Universal Turing Machine
 
 A universal Turing machine U can simulate any Turing machine M.
 
@@ -878,7 +878,7 @@ A universal Turing machine U can simulate any Turing machine M.
 - U accepts if M accepts w
 - U rejects if M rejects w
 
-#### Church-Turing Thesis
+### Church-Turing Thesis
 
 All reasonable models of computation are equivalent in power.
 
@@ -893,7 +893,7 @@ The thesis is not a mathematical theorem but a claim about the nature of computa
 
 ## Chapter 8: From Universality to Impossibility
 
-#### Asymptotic Complexity
+### Asymptotic Complexity
 
 Asymptotic notation describes function growth as input approaches infinity.
 
@@ -912,7 +912,7 @@ Asymptotic notation describes function growth as input approaches infinity.
 `f(n) = Theta(g(n))` if:
 - `f(n) = O(g(n)) AND f(n) = Omega(g(n))`
 
-#### Time Complexity
+### Time Complexity
 
 Time complexity measures computational steps as a function of input size.
 
@@ -924,7 +924,7 @@ Time complexity measures computational steps as a function of input size.
 - `O(n^2)` - quadratic
 - `O(2^n)` - exponential
 
-#### Space Complexity
+### Space Complexity
 
 Time complexity measures computational steps as a function of input size.
 
@@ -934,14 +934,14 @@ Time complexity measures computational steps as a function of input size.
 - `O(n)` - linear
 - `O(n^k)` - polynomial
 
-#### Complexity Classes: P
+### Complexity Classes: P
 
 P is the class of decision problems solvable in polynomial time.
 
 **Formal definition:**
 - `P = {L | EXISTS deterministic Turing machine M and polynomial p(n) such that M decides L in time O(p(n))}`
 
-#### Complexity Classes: NP
+### Complexity Classes: NP
 
 NP is the class of decision problems verifiable in polynomial time.
 
@@ -951,7 +951,7 @@ NP is the class of decision problems verifiable in polynomial time.
 **Equivalently:**
 - `NP = {L | EXISTS polynomial-time verifier (algorithm) V such that: x IN L IFF EXISTS certificate c where V(x, c) accepts (returns YES)}`
 
-#### Polynomial-Time Reductions
+### Polynomial-Time Reductions
 
 A polynomial-time reduction (Karp reduction) transforms one problem to another in polynomial time.
 
@@ -965,7 +965,7 @@ A KARP-REDUCES-TO B if:
 - If A KARP-REDUCES-TO B and B IN P, then A IN P
 - If A KARP-REDUCES-TO B and A NOT IN P, then B NOT IN P
 
-#### NP-Completeness
+### NP-Completeness
 
 A problem is NP-complete if it is in NP and every problem in NP reduces to it.
 
@@ -979,7 +979,7 @@ Problem L is NP-complete if:
 - If any NP-complete problem is in P, then P = NP
 - If any NP-complete problem is not in P, then P != NP
 
-#### P vs NP Problem
+### P vs NP Problem
 
 The P vs NP problem asks whether P = NP.
 
@@ -989,7 +989,7 @@ Can every problem whose solution is verifiable in polynomial time also be solved
 
 **Status:** Open problem
 
-#### Turing Reductions
+### Turing Reductions
 
 A Turing reduction solves one problem using another as an oracle (a hypothetical subroutine that solves a problem in one step).
 
@@ -1002,7 +1002,7 @@ A TURING-REDUCES-TO B if:
 - If B is decidable, then A is decidable
 - If A is undecidable, then B is undecidable
 
-#### Halting Problem
+### Halting Problem
 
 The halting problem: Given encoding of Turing machine M and input w, does M halt on w?
 
@@ -1029,7 +1029,7 @@ Consider `D(<D>)`:
 
 Therefore H cannot exist.
 
-#### Rice's Theorem
+### Rice's Theorem
 
 All non-trivial properties of Turing machine languages are undecidable.
 
@@ -1041,7 +1041,7 @@ Let P be a property of languages such that:
 
 Then "Does Turing machine M recognize a language with property P?" is undecidable.
 
-#### Gödel's Incompleteness Theorems
+### Gödel's Incompleteness Theorems
 
 In any consistent formal system capable of expressing arithmetic, there exist true statements that cannot be proven.
 
