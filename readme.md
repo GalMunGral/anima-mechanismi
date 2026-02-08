@@ -703,10 +703,10 @@ Hoare logic provides formal reasoning about program correctness.
 Temporal logic formalizes reasoning about execution sequences.
 
 **Key operators over infinite state sequence:**
-- `NEXT phi` - phi holds in next state
-- `EVENTUALLY phi` - phi holds in some future state
-- `ALWAYS phi` - phi holds in all future states
-- `phi1 UNTIL phi2` - phi1 holds until phi2 holds
+- `NEXT p` - `p` holds in next state
+- `EVENTUALLY p` - `p` holds in some future state
+- `ALWAYS p` - `p` holds in all future states
+- `p UNTIL q` - `p` holds until `q` holds
 
 **Example:**
 - `ALWAYS (request IMPLIES EVENTUALLY response)`
