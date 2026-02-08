@@ -777,13 +777,13 @@ A pushdown automaton extends FSA with a stack for unbounded memory.
 **Formal definition:**
 
 `(Q, A, G, delta, q0, Z0, F)` where:
-- Q - finite set of states
-- A - input alphabet
-- G - stack alphabet
+- `Q` - finite set of states
+- `A` - input alphabet
+- `G` - stack alphabet
 - `delta: Q CROSS (A UNION {EPSILON}) CROSS G -> P(Q CROSS G*)`
-- q0 - initial state
-- Z0 - initial stack symbol
-- F - accept states
+- `q0` - initial state
+- `Z0` - initial stack symbol
+- `F` - accept states
 
 **Deterministic PDA:**
 - At most one transition for each `(q, a, Z)` configuration
