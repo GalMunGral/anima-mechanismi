@@ -1081,6 +1081,36 @@ Then "Does Turing machine `M` recognize a language with property `P`?" is undeci
 
 ### Gödel's Incompleteness Theorems
 
-In any consistent formal system capable of expressing arithmetic, there exist true statements that cannot be proven.
+Gödel's incompleteness theorems reveal fundamental limits of formal systems.
 
-Incompleteness in logic and undecidability in computation both reveal fundamental limits of formal systems.
+**First Incompleteness Theorem:**
+
+In any consistent formal system `F` that is sufficiently powerful to express arithmetic:
+- `EXISTS` statement `G` such that:
+  - `G` is true in the standard model of arithmetic
+  - `G` is not provable in `F`
+  - `NOT G` is not provable in `F`
+
+`F` is **incomplete** - there exist true statements it cannot prove.
+
+**Sufficiently powerful** means `F` can express:
+- Basic arithmetic operations
+- Properties of natural numbers
+- Self-reference (statements about provability)
+
+**Second Incompleteness Theorem:**
+
+A consistent formal system `F` cannot prove its own consistency.
+
+Formally:
+- Let `Con(F)` be the statement "F is consistent"
+- If `F` is consistent, then `F` cannot prove `Con(F)`
+
+**Connection to Computability:**
+
+Gödel's proof uses a technique similar to the halting problem:
+- Construct a self-referential statement
+- "This statement is not provable"
+- Analogous to: "This program does not halt"
+
+*Incompleteness in logic and undecidability in computation both reveal fundamental limits of formal systems. No algorithmic procedure can decide all mathematical truths. There is no complete and consistent axiomatization of mathematics.*
