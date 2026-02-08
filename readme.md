@@ -645,25 +645,16 @@ Small-step semantics defines single computation steps.
 - Expression `e` in state `s` reduces to `e'` in state `s'`
 
 **Example rules for expressions:**
-```
-<x, s> -> <s(x), s>
-
-<e1, s> -> <e1', s'>
--------------------------
-<e1 + e2, s> -> <e1' + e2, s'>
-```
+**Example rules for expressions (small-step):**
+- `<x, s> -> <s(x), s>`
+- IF `<e1, s> -> <e1', s'>` THEN `<e1 + e2, s> -> <e1' + e2, s'>`
 
 **Example rules for statements:**
-```
-<x := e, s> -> <x := e', s'>  if <e, s> -> <e', s'>
-<x := v, s> -> <skip, s[x := v]>
-
-<c1, s> -> <c1', s'>
--------------------------
-<c1; c2, s> -> <c1'; c2, s'>
-
-<skip; c2, s> -> <c2, s>
-```
+**Example rules for statements (small-step):**
+- IF `<e, s> -> <e', s'>` THEN `<x := e, s> -> <x := e', s'>`
+- `<x := v, s> -> <skip, s[x := v]>`
+- IF `<c1, s> -> <c1', s'>` THEN `<c1; c2, s> -> <c1'; c2, s'>`
+- `<skip; c2, s> -> <c2, s>`
 
 ### Operational Semantics: Big-Step
 
@@ -674,27 +665,17 @@ Big-step semantics defines complete evaluation.
 - Expression `e` in state `s` evaluates to value `v`
 
 **Example rules for expressions:**
-```
-<n, s> => n
-
-<e1, s> => n1    <e2, s> => n2
------------------------------------
-<e1 + e2, s> => n1 + n2
-```
+**Example rules for expressions (big-step):**
+- `<n, s> => n`
+- IF `<e1, s> => n1` AND `<e2, s> => n2` THEN `<e1 + e2, s> => n1 + n2`
 
 **Example rules for statements:**
 
-`<c, s> => s'`
+`<c, s> => s'`: Statement `c` in state `s` produces state `s'`.
 
-Statement `c` in state `s` produces state `s'`
-
-```
-<x := e, s> => s[x := [[e]](s)]
-
-<c1, s> => s'    <c2, s'> => s''
----------------------------------
-<c1; c2, s> => s''
-```
+**Example rules for statements (big-step):**
+- IF `<e, s> => v` THEN `<x := e, s> => s[x := v]`
+- IF `<c1, s> => s'` AND `<c2, s'> => s''` THEN `<c1; c2, s> => s''`
 
 ### Hoare Logic
 
@@ -707,38 +688,19 @@ Hoare logic provides formal reasoning about program correctness.
 **Inference rules:**
 
 **Assignment:**
-```
-------------------------
-{P[x := e]} x := e {P}
-```
+- `P[x := e]` AND `{P[x := e]} x := e {P}`
 
 **Sequence:**
-```
-{P} c1 {Q}    {Q} c2 {R}
---------------------------
-{P} c1; c2 {R}
-```
+- IF `{P} c1 {Q}` AND `{Q} c2 {R}` THEN `{P} c1; c2 {R}`
 
 **Conditional:**
-```
-{P AND b} c1 {Q}    {P AND NOT b} c2 {Q}
-------------------------------------------
-{P} if b then c1 else c2 {Q}
-```
+- IF `{P AND b} c1 {Q}` AND `{P AND NOT b} c2 {Q}` THEN `{P} if b then c1 else c2 {Q}`
 
-**While (loop invariant I):**
-```
-{I AND b} c {I}
-----------------------------------
-{I} while b do c {I AND NOT b}
-```
+**While (loop invariant `I`):**
+- IF `{I AND b} c {I}` THEN `{I} while b do c {I AND NOT b}`
 
 **Consequence:**
-```
-P' IMPLIES P    {P} c {Q}    Q IMPLIES Q'
---------------------------------------------
-{P'} c {Q'}
-```
+- IF `P' IMPLIES P` AND `{P} c {Q}` AND `Q IMPLIES Q'` THEN `{P'} c {Q'}`
 
 **Example:**
 - `{x = 5} y := x + 1 {y = 6}`
@@ -1007,19 +969,19 @@ A Turing reduction solves one problem using another as an oracle (a hypothetical
 
 ### Halting Problem
 
-The halting problem: Given encoding of Turing machine M and input w, does M halt on w?
+The halting problem: Given encoding of Turing machine `M` and input `w`, does `M` halt on `w`?
 
-**Input:** `<M, w>` where `<M>` is the encoding of a Turing machine M, w is a string
+**Input:** `<M, w>` where `<M>` is the encoding of a Turing machine `M`, `w` is a string
 
-**Output:** YES if M halts on w, NO if M loops forever
+**Output:** `YES` if `M` halts on `w`, `NO` if `M` loops forever
 
 **Theorem:** The halting problem is undecidable.
 
 **Proof by contradiction:**
 
-Assume H decides the halting problem (H accepts `<M, w>` iff M halts on w).
+Assume `H` decides the halting problem (`H` accepts `<M, w>` iff `M` halts on `w`).
 
-Construct machine D:
+Construct machine `D`:
 ```
 D(<M>):
   if H(<M>, <M>) accepts: loop forever
@@ -1030,7 +992,7 @@ Consider `D(<D>)`:
 - If `H(<D>, <D>)` accepts: `D(<D>)` loops (contradiction)
 - If `H(<D>, <D>)` rejects: `D(<D>)` halts (contradiction)
 
-Therefore H cannot exist.
+Therefore `H` cannot exist.
 
 ### Rice's Theorem
 
