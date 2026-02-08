@@ -105,3 +105,7 @@ Permutations of n objects:
 Combinations:
   Recursive: C(n, k) = C(n-1, k-1) + C(n-1, k)  (Pascal's triangle)
   Closed form: C(n, k) = n!/(k! * (n-k)!)
+
+
+
+

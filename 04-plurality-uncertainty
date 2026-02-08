@@ -191,3 +191,7 @@ For random variables X and Y:
 where H(X, Y) is joint entropy.
 
 Represents how much knowing Y reduces uncertainty about X.
+
+
+
+

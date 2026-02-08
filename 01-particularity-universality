@@ -51,4 +51,6 @@ Proof by cases:
 Counterexample:
   To disprove FOR ALL x, P(x), find one x where P(x) is false.
 
-  
+
+
+ 
