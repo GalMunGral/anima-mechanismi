@@ -28,21 +28,6 @@ Finite sequences:
   Length n sequence
 
 
-Combinatorics
--------------
-
-Permutations of k from n:
-  Recursive: P(n, k) = n * P(n-1, k-1)
-  Closed form: P(n, k) = n!/(n-k)!
-
-Permutations of n objects:
-  P(n) = n!
-
-Combinations:
-  Recursive: C(n, k) = C(n-1, k-1) + C(n-1, k)  (Pascal's triangle)
-  Closed form: C(n, k) = n!/(k! * (n-k)!)
-
-
 Mathematical Induction
 ----------------------
 
@@ -107,23 +92,16 @@ Termination requires:
   Each recursive call moves toward base case
 
 
-Lambda Calculus
----------------
+Combinatorics
+-------------
 
-Lambda calculus is a formal system for expressing computation via functions.
+Permutations of k from n:
+  Recursive: P(n, k) = n * P(n-1, k-1)
+  Closed form: P(n, k) = n!/(n-k)!
 
-Lambda terms:
-  x                 - variable
-  LAMBDA x. M       - abstraction (function with parameter x, body M)
-  M N               - application (apply function M to argument N)
+Permutations of n objects:
+  P(n) = n!
 
-Beta-reduction:
-  (LAMBDA x. M) N  ==>  M[x := N]
-  (substitute N for x in M)
-
-Example:
-  (LAMBDA x. x + 1) 5  ==>  5 + 1  ==>  6
-
-Recursion in lambda calculus (details omitted):
-  Fixed-point combinators like the Y-combinator enable recursive
-  computation without named functions.
+Combinations:
+  Recursive: C(n, k) = C(n-1, k-1) + C(n-1, k)  (Pascal's triangle)
+  Closed form: C(n, k) = n!/(k! * (n-k)!)
