@@ -978,17 +978,17 @@ Space complexity measures memory usage as a function of input size.
 `P` is the class of decision problems solvable in polynomial time.
 
 **Formal definition:**
-- `P = {L | EXISTS deterministic Turing machine M and polynomial p(n) such that M decides L in time O(p(n))}`
+- `P = {L | L decidable by deterministic TM in polynomial time}`
 
 ### Complexity Classes: NP
 
 `NP` is the class of decision problems verifiable in polynomial time.
 
 **Formal definition:**
-- `NP = {L | EXISTS nondeterministic Turing machine M and polynomial p(n) such that M decides L in time O(p(n))}`
+- `NP = {L | L decidable by nondeterministic TM in polynomial time}`
 
 **Equivalently:**
-- `NP = {L | EXISTS polynomial-time verifier (algorithm) V such that: x IN L IFF EXISTS certificate c where V(x, c) accepts (returns YES)}`
+- `NP = {L | EXISTS polynomial-time verifier V and certificate c: x IN L IFF V(x, c) accepts}`
 
 ### Polynomial-Time Reductions
 
@@ -997,8 +997,7 @@ A polynomial-time reduction (Karp reduction) transforms one problem to another i
 **Formal definition:**
 
 `A KARP-REDUCES-TO B` if:
-- `EXISTS polynomial-time computable function f such that:`
-- `FOR ALL x: x IN A IFF f(x) IN B`
+- `EXISTS polynomial-time function f: x IN A IFF f(x) IN B`
 
 **Properties:**
 - If `A KARP-REDUCES-TO B` and `B IN P`, then `A IN P`
