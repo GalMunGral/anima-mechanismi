@@ -1,6 +1,8 @@
 # ANIMA-MECHANISMI
 An Index of Computer Science for Practitioners
 
+---
+
 > *Comets arrive, bright with borrowed fire,*  
 > *promising their blaze will stay.*  
 > *Morning steals them anyway.*
@@ -18,6 +20,8 @@ An Index of Computer Science for Practitioners
 > *After glitter fades,*  
 > *a silent thunder*  
 > *echoes from the dawn of time.*
+
+---
 
 ## Chapter 1: From Particularity to Universality
 
