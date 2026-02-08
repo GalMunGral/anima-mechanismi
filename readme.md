@@ -1,7 +1,7 @@
 # ANIMA MECHANISMI
 *Soul of Mechanism*
 
-An Index of Computer Science
+From Certainty to Impossibility: An Index of Computer Science
 
 ---
 
@@ -31,7 +31,7 @@ An Index of Computer Science
 
 ## Table of Contents
 
-1. [Particularity and Universality](#chapter-1-particularity-and-universality)
+1. [Certainty and Universality](#chapter-1-certainty-and-universality)
 2. [Collection and Connection](#chapter-2-collection-and-connection)
 3. [Enumeration and Generation](#chapter-3-enumeration-and-generation)
 4. [Plurality and Uncertainty](#chapter-4-plurality-and-uncertainty)
@@ -42,7 +42,7 @@ An Index of Computer Science
 
 ---
 
-## Chapter 1: Particularity and Universality
+## Chapter 1: Certainty and Universality
 
 ### Propositional Logic
 
