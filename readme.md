@@ -363,6 +363,7 @@ Monoids are a fundamental structure in abstract algebra, along with groups, ring
 - `(R, +, 0)` - reals under addition
 - `(sequences over A, concatenation, empty sequence)`
 - `(lists over A, concatenation, empty list)`
+- `(A -> A, composition, identity function)` - functions under composition
 
 ### Limits and Convergence
 
